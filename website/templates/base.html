@@ -1,0 +1,92 @@
+{% load staticfiles %}
+<!doctype html>
+<html>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+  <head>
+    <title>
+      {% block title %}
+        Planbot
+      {% endblock title %}
+    </title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="icon" href="{% static 'images/favicon.ico' %}">
+    {% block header %}{% endblock header %}
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul class="horizontal">
+          <li>
+            <a class="logo" href="{% url 'home' %}"><img src="{% static 'images/planbotlight.png' %}" alt="logo"></a>
+          </li>
+          <li class="hide-mobile">
+            <a href="{% url 'home' %}"><b>PLANBOT</b></a>
+          </li>
+          <li style="float:right">
+            <a href="{% url 'contact' %}"><b>CONTACT</b></a>
+          </li>
+          <li style="float:right">
+            <a href="{% url 'blog' %}"><b>BLOG</b></a>
+          </li>
+        </ul>
+      </nav>
+      <nav>
+        <ul class="vertical">
+          <li>
+            <a class="tooltip" href="https://m.me/planbotco">
+              <img src="{% static 'images/messenger.svg' %}" alt="msg">
+              <span class="tooltiptext" id="msg">Send a message</span>
+            </a>
+          </li>
+          <li>
+            <a class="tooltip" href="https://slack.com/oauth/authorize?&client_id=162051889907.192270162849&scope=commands,incoming-webhook">
+              <img src="{% static 'images/slack_white.svg' %}" alt="slk">
+              <span class="tooltiptext">Add to Slack</span>
+            </a>
+          </li>
+          <li>
+            <a class="tooltip" href="{% url 'api' %}">
+              <img src="{% static 'images/api.svg' %}" alt="api">
+              <span class="tooltiptext" id="api">Try the API</span>
+            </a>
+          </li>
+          <li>
+            <a class="tooltip" href="https://github.com/ayuopy/planbot">
+              <img src="{% static 'images/github.svg' %}" alt="git">
+              <span class="tooltiptext" id="git">Planbot on Github</span>
+            </a>
+          </li>
+          <li>
+            <a class="tooltip" href="{% static 'docs/planbot_white_paper.pdf' %}">
+              <img src="{% static 'images/pdf.svg' %}" alt="pdf">
+              <span class="tooltiptext" id="pdf">Read our white paper</span>
+            </a>
+          </li>
+          <li>
+            <a class="tooltip" href="{% url 'donate' %}">
+              <img src="{% static 'images/bitcoin.svg' %}" alt="donate">
+              <span class="tooltiptext" id="btc">Donate</span>
+            </a>
+          </li>
+        <ul>
+      </nav>
+    </header>
+    <article>
+    {% block content %}{% endblock content %}
+    {% block footer %}{% endblock footer %}
+    </article>
+    <nav class="mobile">
+      <ul>
+        <li><a href="{% url 'api' %}">API</a></li>
+        <li><a href="{% static 'docs/planbot_white_paper.pdf' %}">White Paper</a></li>
+        <li><a href="{% url 'donate' %}">Donate</a></li>
+        <li><a href="https://github.com/ayuopy/planbot">Github</a></li>
+        <li><a href="http://fb.me/PlanbotUK">Facebook</a></li>
+      </ul>
+    </nav>
+    <footer>
+      <p class="footer">&#169 2017 Adam Staveley, Simon Tucker</p>
+    </footer>
+  </body>
+</html>

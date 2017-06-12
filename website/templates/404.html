@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+  {{ block.super }} - 404
+{% endblock title %}
+
+{% block content %}
+  <div class="container">
+    <h1>404 Not Found</h1>
+    <p>Planbot got hungry...</p>
+    <center><img src="{% static 'images/xkcd_bot.jpg' %}" alt="xkcd_twitter_bot"></center>
+    <p>Source: xkcd</p>
+  </div>
+{% endblock content %}

@@ -1,0 +1,165 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+  {{ block.super }} - Blog
+{% endblock title %}
+
+{% block content %}
+  <script src="{% static 'js/cascade.js' %}"></script>
+  <div class="container" id="blog">
+    <h1>Blog</h1>
+    
+    <ul id="entry" onclick="cascade('3')">
+      <li>Blockchain in Property</li>
+    </ul>
+    <p class="content" id="3">
+      Like Planbot, this blog post is in development.
+      <br><br>
+      <a class="collapse" onclick="cascade('3')">Collapse</a>
+    </p>
+
+    <ul id="entry" onclick="cascade('2')">
+      <li>Machine Learning in Property</li>
+    </ul>
+    <p class="content" id="2">
+      Following on from our white paper, we would like to share a bit more 
+      information on how machine learning works, what its being used for, and 
+      how it could potentially be incorporated in property-based applications
+      in the future.
+      <br><br>
+      Machine learning is used in all sorts of services. Google uses it to 
+      determine search engine results. Email clients use it to classify your
+      email into spam and non-spam. Netflix uses it to build its recommendation
+      system. Vehicle manufacturers use it to build self-driving cars. You get 
+      the picture. So what is it?
+      <br><br>
+      Fundamentally, machine learning uses statistical techniques to train 
+      either supervised or unsupervised data. Supervised data refers to data
+      which has an output variable. Using property as an example, your output 
+      variable might be houses prices, with your input variables floor space,
+      number of bedrooms and so on. Your output variable, therefore, is what
+      you're asking a computer to predict. With more training examples (read: 
+      data), the algorithm behind it all becomes better at determining the 
+      price of a 3000 square foot house with 4 bedrooms.
+      <br><br>
+      In the case of more advanced chatbots (the different types of chatbots
+      are explained in our white paper), developers are using natural 
+      language processing. This is a section of machine learning which can
+      handle text as opposed to simply numbered data. It is more simply
+      used in email spam classifiers but its popularity as a means of building
+      more human-like chatbots is growing rapidly.
+      <br><br>
+      Unsupervised data, on the other hand, is data with no output variable. 
+      With unsupervised data, you are asking the algorithm to sort the data
+      into distinct groups. This is useful for advertising companies in 
+      determining consumer profiles within big data, for instance. The focus
+      of this blog will centre on supervised machine learning and its 
+      applications.
+      <br><br>
+      There are a number of property-related technology ('proptech')
+      startups in this space offering services which seek to make it 
+      easier for developers and planners alike to access information. Such 
+      startups include Land Insight, Urban Intelligence and Infabode. Now
+      the extent to which these companies employ machine learning is unclear 
+      but as a simplified example, they each have powerful search engines which
+      aim to give users frustration-free access to a wide range of property
+      information. Those search engines likely determine results via the use
+      of machine learning.
+      <br><br>
+      Each of these startups  have bought into the idea of a faster planning
+      system. Their solutions are are surely of great use to many industry 
+      professionals, however, they are guilty of catering to
+      the developer and the policy-maker, already with a great number of tools
+      in their locker. The frustration over the past decade or two has been 
+      two-fold: needless complexity and slow processing times. The former 
+      challenge is in the process of being solved, so what about the latter?
+      <br><br>
+      Providing access to the right information in a centralised format is
+      certainly part of the solution: getting it right the first time means
+      reduced planning costs and development time. But those months spent 
+      twiddling your thumbs waiting for the decision to come back can still be
+      reduced. Let it be known: planning permission should not be taken
+      lightly. A plan for a new football stadium in the heart of London is 
+      not a decision to be made over a pint given the huge number of people
+      to be affected by it. But at a time when serious scrutiny is on the
+      supply of housing, we should not be deterring self-builders and small
+      housebuilders from submitting applications
+      <br><br>
+      So how could decision-makers be empowered using machine learning? 
+      For now the prospect of some kind of Philip K. Dick-style android, 
+      that knows the planning system inside-out, is likely
+      some way off (and we probably wouldn't want a decision-maker lacking in 
+      empathy anyway). A simpler solution might be a machine learning system 
+      which can determine whether the objective aspects of a plan (i.e. 
+      elements that can be measured) fit in with the surrounding area. The 
+      training data from which this can be inferred is say, a London borough's
+      planning permission history from the period of their current local plan,
+      mixed with census data. In addition to this, given a council's unique set
+      of policies for their area, certain elements might be given a higher 
+      weight in the planning application (just as a human would), with this 
+      being taken into account by the machine learning algorithm.
+      <br><br>
+      This could be just one part of the application. Machine learning image 
+      recognition systems, as used in driverless cars, are capable of reading
+      handwriting and categorising objects. It is not beyond the realm of 
+      possibility to imagine such a system viewing floorplans and profiles
+      of a new build to determine, in tandem with application history and 
+      other information (perhaps provided by the API (i.e. developer tools) of 
+      one of the aforementioned startups), whether an application should be 
+      granted permission. The idea here is that this could be the first stage
+      of decision-making, with the final say still being made by us.
+      <br><br>
+      Whether this type of system is practical is, at the moment, up in the
+      air though, if nothing else, using machine learning could reveal 
+      interesting information about a council, such as whether there are certain
+      sets of parameters which are often granted permission over others. The 
+      idea here, it should be emphasised, is not to displace planners but to 
+      automate some of the processes decision-makers might have to go through 
+      to determine an application. If automation is inevitable, why not embrace
+      it?
+      <br><br>
+      Adam Staveley - 06/03/2017
+      <br><br>
+      <a class="collapse" onclick="cascade('2')">Collapse</a>
+    </p>
+
+    <ul id="entry" onclick="cascade('1')">
+      <li>Blog Meta</li>
+    </ul>
+    <p class="content" id="1">
+      In the spirit of doing things a bit differently and in the spirt of 
+      collaboration, we'd like to open our own platform by extending
+      you an invitation to submit any material broadly-related to artifical 
+      intelligence and/or property. Of course, this isn't a ploy to get others 
+      to write our blog posts for us, rather we simply love seeing people get 
+      creative. Any material will be considered, non-fiction or otherwise.
+      <br><br>
+      <a class="collapse" onclick="cascade('1')">Collapse</a>
+    </p> 
+  
+    <ul id="entry" onclick="cascade('0')">
+      <li>About the team</li>
+    </ul>
+    <p class="content" id="0">
+      Planbot has been developed by a team of two, consisting of Adam Staveley
+      and Simon Tucker. Both are recent graduates from the University of 
+      Reading with backgrounds in real estate and planning. 
+      <br><br>
+      Adam Staveley is Planbot's developer. He spent four years in Reading, 
+      studying Geography at undergraduate level and Spatial Planning and 
+      Development at postgraduate level. Since graduating, he has taken up an 
+      interest in technology and hopes to apply that interest to his knowledge 
+      of property. In particular, the continued development of artificial 
+      intelligence has captured his imagination in terms of being able to 
+      automate laborious tasks through advanced analytics. Outside of that 
+      techno mumbo jumbo, Adam enjoys football, cooking, writing the odd short
+      story and is, all things considered, open to this whole Mars emigration
+      idea.
+      <br><br>
+      Simon Tucker will finish his part of this blog post some day...
+      <br><br>
+      <a class="collapse" onclick="cascade('0')">Collapse</a>
+    </p>
+  </div>
+
+{% endblock content %}

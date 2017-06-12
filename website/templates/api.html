@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+  {{ block.super }} - API
+{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <h1>Try the Planbot API</h1>
+    <p>
+      The API grants direct access to Planbot's database. Only GET requests
+      are currently supported.
+    </p>
+    <center>
+      <form class="api">
+        <script src="{% static 'js/apiHandler.js' %}"></script>
+        <p class="api-form"><b>
+        <b>GET</b> https://api.planbot.co/<input class="text" placeholder="action" required></input>/<input class="text" id="param" placeholder="parameter" required></input></input>
+        <input type="submit" class="submit-button" value="Send"></input>
+        </b><p>
+      </form>
+
+
+    <div>
+        <h2 class="api">Output</h2>
+        <span id="placeholder">
+        <p class="api">The output of a request will be in JSON format with
+          two fields. A success field will tell you whether a result was found
+          for your query. If success is false, a reason field will be given. If
+          success if true, a result field will have two further fields: either a
+          value or options field, where value is a key-value tuple and options
+          is a list of related matches.<br><br>
+          Example API output will be shown here when the above form is executed.</p>
+        </span>
+      </div>
+
+    <div>
+      <div>
+        <h2 class="api">Instructions</h2>
+          <center>
+          <table>
+            <tr>
+              <th>Action</th>
+              <th class="extra">Request</th>
+              <th>Example</th>
+            </tr>
+            <tr>
+              <td class="mono">define</td>
+              <td class="extra">Return a definition</td>
+              <td class="mono" style="word-break: break-all;">/define/affordable-housing</td>
+            </tr>
+            <tr>
+              <td class="mono">use</td>
+              <td class="extra">Use class information</td>
+              <td class="mono">/use/b8</td>
+            </tr>
+            <tr>
+              <td class="mono">project</td>
+              <td class="extra">Permitted development information</td>
+              <td class="mono">/project/paving</td>
+            </tr>
+            <tr>
+              <td class="mono">doc</td>
+              <td class="extra">Request policy or legislation</td>
+              <td class="mono">/doc/localism-act</td>
+            </tr>
+            <tr>
+              <td class="mono">lp</td>
+              <td class="extra">Request local plans</td>
+              <td class="mono">/lp/rg6-6ur
+            </tr>
+          </table>
+          </center>
+
+          <h2 class="api">Usage Examples</h2>
+          <p class="api-code">
+            <b>Shell:</b><br>
+            <span style="font-family:monospace;font-size:10pt;">
+              $ curl https://api.planbot.co/define/green-belt | jq<br><br>
+            </span>
+
+            <b>Python:</b><br>
+            <span style="font-family:monospace;font-size:10pt;">
+              <span style="color:darkcyan;">import</span> requests<br>
+              <span style="word-break: break-all;">res = requests.get(<span style="color:purple">'https://api.planbot.co/lp/reading'</span>).json()</span><br>
+              <span style="color:darkcyan;">if</span> res['success']:<br>
+              &emsp;&emsp;&emsp;&emsp;result = res['result']
+            </span>
+          </p>
+      </div>
+
+      </center>
+
+    </div>
+
+</div>
+{% endblock content %}

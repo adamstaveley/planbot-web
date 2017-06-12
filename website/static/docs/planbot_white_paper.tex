@@ -1,0 +1,234 @@
+\documentclass[12pt, a4paper]{article}
+
+\usepackage{helvet}
+\usepackage[margin=1.0in]{geometry}
+
+\usepackage{lstautogobble}
+
+\usepackage{soul}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+\setul{}{1pt}
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+  {\LARGE\bfseries Planbot}
+
+  \vspace{-0.5cm}
+  \rule{\linewidth}{2pt}
+
+  {\large\bfseries White paper - April 2017}
+
+  {\large\bfseries Authors: Adam Staveley, Simon Tucker}
+
+  Planbot is a chatbot developed by a team consisting of two University of
+  Reading graduates. It aims to provide users of different levels of experience
+  with easily accessible property information and documents, with a current
+  focus on planning. This white paper outlines how and why Planbot was
+  developed, while also presenting an image of how its future may look.
+
+    \parskip 4em
+
+  {\large\bfseries\ul{The motivation behind a property-based chatbot}}
+
+    \parskip 1em
+
+  Planbot came about through a mutual passion for both technology and property.
+  On the one hand, there exists impending wide-scale automation through rapid
+  development in technologies such as machine learning and blockchain, and on
+  the other, a property industry with a planning system largely playing catch
+  up. The first thought, and indeed the first iteration of Planbot, was a
+  natural language chatbot that could infer meaning from user sentances; a
+  chatbot that had the ability to converse with its users about property and
+  inform them of the planning system. The problem with this quickly became
+  an issue of complexity.
+
+  By and large, the user requires accurate information and most likely wishes to
+  consume that information as quickly as possible whilst minimising frustration.
+  The choice became apparent during the development process that a shift in
+  thinking was required. The following sections will draw upon this shift
+  further.
+
+  With that said, the two `hands' outlined above still remain firmly in mind.
+  Nobody can be sure of the impact of automation on job losses: each week a new
+  report is released detailing potential losses of 40\%, 60\%, 80\%. Nor is the
+  future of artificial intelligence and impending singularity set in stone,
+  just as distributed ledger technlogy needs to overcome various difficulties.
+  These technologies, however, should be embraced. The ability to use advanced
+  statistics to predict actions based on large datasets lends itself well to
+  chatbots. The immutable, open and distributed data that blockchain technology
+  provides potential access to, allows for the use of far greater amounts of
+  data. Planbot, therefore, moves forward with these technologies in mind.
+
+  Planbot aims to appeal to a wide range of users: planners, developers and
+  self-builders. The chatbot aims to provide these users with a tool for quickly
+  finding information about definitions and planning mechanisms while also,
+  (perhaps the main draw) being able to request various documents pertinent to
+  planning. This is believed to be a solid foundation from which Planbot can
+  grow in the future. Our approach to Planbot was one of transparency: ease of
+  access to open information. Planbot therefore acts as a front-end user
+  interface to an open source of data, which is also accessible via a
+  public-facing API.
+
+    \parskip 3em
+
+  {\large\bfseries\ul{What is a Chatbot?}}
+
+    \parskip 1em
+
+  A chatbot is an interactive computer program designed to mimic (to various
+  extents) human conversation. They are often used to provide 24/7 customer
+  service, though general purpose chatbots have been developed in the past
+  and will continue to be in the future. They most often take form on instant
+  messaging platforms and as such require quick responses to user queries,
+  usually with a character limit for each message. Chatbots can either be
+  rules-based where the program listens for triggers and uses them to run an
+  appropriate function on the 'back-end', or else they can use Natural Language
+  Processing (NLP) to learn from conversations as more recent experiments like
+  Microsoft's 'Tay' and 'Zo' have shown (with differing levels of success).
+
+    \parskip 3em
+
+  {\large\bfseries\ul{Current functions of Planbot}}
+
+    \parskip 1em
+
+  Planbot releases with three core functions which aim to entice professionals
+  into beginning to understand and conceptually apply automated processes to
+  roles within their fields. The three functions are:
+
+    \begin{itemize}
+      \item {\bfseries Definitions}: The user can ask for definitions to a
+        wide range of key terms often found in planning and property.
+        Currently there are over 750 definitions a user can ask for,
+        sourced from the Planning Portal and the Lexicon of PRS, BtR and
+        Property by Richard Berridge.
+      \item {\bfseries Information}: Planbot can find a user information on
+        two planning mechanisms: use classes and permitted development. A
+        user might ask for further details on the C3 use class or whether
+        planning permission is needed for extensions, for example. The
+        information here is also sourced from Planning Portal.
+      \item {\bfseries Documents}: Three types of documents can be asked
+        for:
+          \begin{itemize}
+            \item {\bfseries Policy \& Legislation}: Statutory documents,
+              such as the Planning Act 2008, or national/regional policy,
+              such as the National Planning Policy Framework, can be
+              asked for by the user.
+            \item {\bfseries Local Plans}: By inputting a local planning
+              authority, or alternatively a postcode, Planbot will find
+              the local plan (or extant local development framework) for that
+              area and send a link for the relevant PDF or webpage to the user.
+          \end{itemize}
+      \end{itemize}
+
+    \parskip 5em
+
+  {\large\bfseries\ul{How Planbot works}}
+
+    \parskip 1em
+
+  Planbot has been built using the Python programming language. Python was used
+  for a variety of reasons: its syntax makes it faster to write than a number
+  of other languages and, in turn, hopefully easier to understand for those
+  coming into the project. The language also has a wide range of 3rd party
+  libraries available which extend its default capabilities. Some of the
+  libraries used in the project include spaCy, a NLP framework, and Bottle, a
+  lightweight web application framework. This means that the majority of the
+  Planbot infrastructure can be built upon Python with relative ease. Python
+  has been used to build a range of other websites and web apps, including for
+  instance, social media sites Reddit and Instagram.
+
+  The NLP module, spaCy, allows Planbot to parse meaning from the user's query
+  more successfully. Early in testing, it was discovered that though there
+  exist, for instance, a myriad of possible definitions a user can ask for,
+  unless the user knows with certainty the exact string or substring that
+  points to that definition, the bot will not return it. Broadly speaking, an
+  algorithm comprised of sentiment analysis, least distance matching and
+  substring matching is used to maximise the ability of the bot to answer a
+  user's query, or at the very least present the user with a range of options
+  to select from.
+
+  Planbot did use the wit.ai API early on, which uses NLP to parse context and
+  intents from user queries. This allows, for instance, the user to say 'Can
+  you find me the definition for green infrastructure', which will be broken
+  down into an intent of 'find me a definition' and a context of 'green
+  infrastructure'. The problem with this becomes apparent when 1) trying to
+  communicate what can and can't be achieved through the chatbot, 2)
+  increasing its complexity by adding further lines of enquirity to the chatbot
+  and, 3) predicting responses between similar questions which should garner
+  different outcomes. Simply put, to ask a question and be given a completely
+  disparate response was never the goal with Planbot.
+
+  As a result of the above, there was a shift in design philosophy to a more
+  structured approach, where the user is given quick reply options and
+  responses are centred around one or two word answers, to communicate the
+  bot's capabilities more transparently. In line with Facebook Messenger's bot
+  guidelines, menus were incorporated which make it much easier to manage
+  context through conversation branches on our end. Having developed a
+  deterministic, but (hopefully) scalable bot engine for selecting repsonses
+  to user queries, we have far greater license over the chatbot than using a
+  bot framework with NLP logic stored on a different server.
+
+  Last but certainly not least, it was decided that Planbot would be open
+  source early on in the project. With the source code being free to modify,
+  the potential for collaborators to join the project increases, while the
+  license chosen, the GNU General Public Licence version 3, dictates that any
+  resulting projects should also be open source. With one of the goals of the
+  project being increased transparency, we believe that the choice of GPLv3
+  meets this criteria.
+
+    \parskip 3em
+
+  {\large\bfseries\ul{Current limitations and future developments}}
+
+    \parskip 1em
+
+  There are several elements of the project that can and will be improved upon
+  in the future. One key point to make is that of managing expectations. This
+  is not solely concerned with our chatbot, but with chatbots more generally.
+  It is possible that Microsoft's 'Tay' and 'Zo' have warped public perception
+  about what the majority of chatbots are currently capable of. The mimicry of
+  human conversation and the 'learning from' aspect of those bots do capture
+  the imagination, but the reality is that this can lead to user frustration in
+  the short term for a chatbot that centres around relaying much-needed
+  information. That is why, as previously detailed, a more structured
+  approach was taken. The aim is not to have our chatbot hold a user's hand
+  throughout the conversation, but to minimise frustration for all users,
+  even if this betrays the 'chat' in chatbot to a certain extent. It is
+  possible, in the future, that Planbot shifts back to a more 'fluid'
+  conversation structure, but for now this style of chatbot is preferred.
+
+  The current feature set of Planbot aims to showcase a range of uses
+  available to different users. At this stage, however, it is primarily focused
+  on the self-builder, with features that aim to educate rather than to serve.
+  Planbot is an `open book' of sorts: being an experimental community project
+  its content could change dramatically over the next year and beyond. further
+  features could include, for instance, the ability to search within PDF
+  documents for more specific information. As well as this, there is evidently
+  more planning information to be included in Planbot. In an earlier version
+  of the bot, a feature that allowed users to fetch recent market reports from
+  sources such as Savills and Cushman Wakefield was included, however it was
+  decided that this was at odds with core Planbot features. As such this
+  feature is likely to form its own entity in the future.
+
+  Looking out over the horizon, we aim to establish Planbot as a viable
+  platform for retrieving property-related information, preferred over using a
+  search engine. We also wish to establish and incorporate our own services,
+  through the use of machine learning.
+
+  This white paper has hopefully described and explained the process we have
+  gone through in developing Planbot. Given the rapidly changing field,
+  Planbot is a project that has been designed with flexibility in mind,
+  with the ability to be shaped by many stakeholders. This makes its
+  development a challenge, but one that we relish. We hope that Planbot
+  can assert itself as a viable alternative to current means of finding
+  property information and believe that its current aggregation of
+  information sets it apart in that regard. In the future, we see Planbot
+  as being a powerful agent within the industry through the wider use of data.
+
+
+\end{document}

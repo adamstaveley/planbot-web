@@ -1,0 +1,148 @@
+{% extends 'base.html' %}
+{% block title %}
+  {{ block.super }} - Home
+{% endblock title %}
+
+{% block content %}
+  <div class="container" id="intro">
+    <h1>Who is Planbot?</h1>
+    <p>
+      Planbot is a chatbot designed to provide users with concise planning
+      information as well as important legislation and market research.
+    </p>
+    <center>
+    <div class="buttons">
+      <a href="https://m.me/planbotco"><button type="button" class="messenger">
+      <img src="static/images/messenger.png">Start chatting</button></a>
+    </div>
+    <div class="buttons">
+      <a href="https://slack.com/oauth/authorize?&client_id=162051889907.192270162849&scope=commands,incoming-webhook">
+      <button type="button" class="slack-button">
+      <img src="static/images/slack_white.svg">Add to Slack</button></a>
+    </div>
+    </center>
+  </div>
+
+  <div class="container" id="about">
+    <h1>What can it do?</h1>
+
+    <div class="flex-container">
+      <div class="flex-text">
+        <h2>Definitions</h2>
+        <p>Ask Planbot for a definition to over 750 property and planning
+          terms.</p>
+      </div>
+      <div class="flex-text">
+        <h2>Information</h2>
+        <p>Planbot can inform you of different types of use classes and
+          permitted development.</p>
+      </div>
+      <div class="flex-text">
+        <h2>Documents</h2>
+        <p>Planbot is a powerful tool for finding planning policy and
+          legislation.</p>
+      </div>
+    </div>
+
+    <div class="flex-container">
+      <div class="flex-screen">
+        <a href="static/images/screen1.png"><img src="static/images/screen1.png"></a>
+      </div>
+      <div class="flex-screen">
+        <a href="static/images/screen2.png"><img src="static/images/screen2.png"></a>
+      </div>
+      <div class="flex-screen">
+        <a href="static/images/screen3.png"><img src="static/images/screen3.png"></a>
+      </div>
+    </div>
+
+    <p>
+      More platforms and features are planned for the future. See our
+      <a id="pdf" href="static/docs/planbot_white_paper.pdf">white paper</a>
+      for more information.
+    </p>
+  </div>
+
+  <div class="container" id="slack">
+    <h1>Slack integration?</h1>
+    <p>Slack commands allow you to quickly request data from Planbot whilst
+      working on a project:
+    </p>
+    <center>
+    <table class="slack">
+      <tr>
+        <td>/define</td>
+        <td>Get a definition</td>
+      </tr>
+      <tr>
+        <td>/use</td>
+        <td>Find use class information</td>
+      </tr>
+      <tr>
+        <td>/project</td>
+        <td>Find permitted development information</td>
+      </tr>
+      <tr>
+        <td>/doc</td>
+        <td>Request legislation and policy documents</td>
+      </tr>
+      <tr>
+        <td>/lp</td>
+        <td>Request a local plan</td>
+      </tr>
+    </table>
+    </center>
+  </div>
+
+  <div class="container" id="index-api">
+    <h1>What about an API?</h1>
+    <p>Anyone can freely access our API and, as a taster, you can see how
+      it works below. Visit our
+      <a id="api" href="{% url 'api' %}">API page</a> for more details.
+    </p>
+    <center>
+    <form class="api" id="index">
+      <script src="/static/js/indexForm.js"></script>
+      <b>GET https://api.planbot.co/lp/<input class="text" placeholder="LPA-or-postcode" id="index" required></b>
+      <input type="submit" class="submit-button" id="index" value="Send"></input>
+    </form>
+    </center>
+    <span id="index-form-output"></span>
+  </div>
+
+  <div class="container" id="help">
+    <h1>Can I help?</h1>
+
+    <div class="flex-container">
+      <div class="flex-text">
+        <p>
+          Yes! Planbot is an open source project. That means the
+          <a id="git" href="https://github.com/ayuopy/Planbot">source code</a>
+          is freely available to modify and distribute in accordance with the
+          GNU General Public Licence version 3.
+        <p>
+      </div>
+      <div class="flex-text">
+        <p>
+          We actively encourage collaboration from all backgrounds, no matter how
+          experienced you are. If you would like to contribute in any capacity,
+          whether it be to the logo or the source, get in touch.
+        </p>
+      </div>
+      <div class="flex-text">
+        <p>
+          All feedback is welcome. As the project is work in progress,
+          every positive and negative comment you make can help to shape the future
+          of Planbot.
+        </p>
+      </div>
+    </div>
+
+    <p>
+      <img id="gpl" src="static/images/gpl.svg">
+    <p>
+  </div>
+
+{% endblock content %}
+
+

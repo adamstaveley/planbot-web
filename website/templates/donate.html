@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+  {{ block.super }} - Donate
+{% endblock title %}
+
+{% block content %}
+  <div class="container">
+    <h1>Donate</h1>
+    <center>
+    <table class="donate">
+      <tr>
+        <td style="color: gold"><b>Bitcoin [BTC]</b></td>
+      </tr>
+      <tr>
+        <td class="address" style="padding-top: 0; color: gold">1AahS9FFXxSmEJyZxMbqqtXUu4gs5ZFjFk</td>
+      </tr>
+      <tr>
+        <td style="color: silver"><b>Litecoin [LTC]</b></td>
+      </tr>
+      <tr>
+        <td class="address" style="padding-top: 0; color: silver;">LMGNTez2wmUoCTWA5i8sjAuGPNMufLXbJf</td>
+      </tr>
+    </table>
+
+    <br><br>
+
+    <h2>Guess where your donation goes?</h2>
+    
+    <div class="donate">
+      <div><button><b>[expensive coffee chain]</b></button></div>
+      <div><button><b>server costs</b></button></div>
+      <div><button><b>[expensive sports car]</b></button></div>
+      <div><button><b>litecoin?</b></button></div>
+    </div>
+    <script src="{% static 'js/donateButtons.js' %}"></script>
+    </center>
+{% endblock content %}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+  {{ block.super }} - Contact
+{% endblock title %}
+
+{% block content %}
+  <div class="container" id="bottom-container">
+    <h1>Contact Us</h1>
+    <p>Send us your feedback or enquiries:</p>
+
+    <center>
+    <form class="contact_form" role="form" action="" method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button class="submit" type="submit">Submit</button>
+    </form>
+    </center>
+
+    <p>You can also get in touch via our <a id="fb" href="https://fb.me/planbotco">Facebook</a> page.</p>
+
+  </div>
+{% endblock content %}
